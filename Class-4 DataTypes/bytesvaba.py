@@ -6,3 +6,8 @@ print(b)
 print(type(b))
 print(ba)
 print(type(ba))
+
+print("*** bytes vs bytearray")
+
+# bytes - are immutable
+# bytearray is mutable object
