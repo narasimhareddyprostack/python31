@@ -18,8 +18,5 @@ from django.urls import path
 from crmapp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('index/',views.index),
-    path('about/',views.service),
-    path('service/',views.service),
-    path('contact/',views.contact),
+    path('index/',views.index)
 ]

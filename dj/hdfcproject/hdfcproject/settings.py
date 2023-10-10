@@ -11,16 +11,19 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-
+import os 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+print(BASE_DIR)
+TEMP_DIR = os.path.join(BASE_DIR, 'hdfcproject','templates')
+print(TEMP_DIR)
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-l)3b6)0ll)r*rd7nrz)y35gmy$=guaoo=bep4j!3^9spcd(n*n'
+SECRET_KEY = 'django-insecure-@f-r6&+dy08ljlg@g92_sz3xx_ew5t0tf7mq5q-hk^)l#5l=(n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'crmapp'
+    'crmapp',
+    'erpapp'
 ]
 
 MIDDLEWARE = [
@@ -55,7 +59,7 @@ ROOT_URLCONF = 'hdfcproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [TEMP_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
