@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os 
+
+import pymysql
+pymysql.install_as_MySQLdb()
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 BASE_DIR_ONE = os.path.dirname(os.path.abspath(__file__))
@@ -79,8 +83,10 @@ WSGI_APPLICATION = 'sbiproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'pro10',
+        'USER':'root',
+        'PASSWORD':'root'
     }
 }
 
@@ -121,8 +127,16 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+
+STATIC_DIR=os.path.join(BASE_DIR_ONE,'static')
+print(STATIC_DIR)
+
 STATIC_URL = '/static/'
 
+
+STATIC_DIRS=[
+    STATIC_DIR,
+]
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
