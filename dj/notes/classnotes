@@ -1,0 +1,92 @@
+python -m venv venv
+
+venv\Scripts\activate
+
+pip install django
+
+python.exe -m pip install --upgrade pip
+
+django-admin startproject hdproject
+
+cd hdproject
+
+py manage.py startapp crmapp
+
+# update settings.py - register app
+
+update your db settings
+
+> pip install pymysql
+
+How to verify db connection
+
+> py manage.py shell
+
+import django
+django.db.connection.ensure_connection()
+
+> mysql -uroot -proot
+> system cls
+> create database pro17
+> show databases
+> use pro17
+> show tables;
+
+> > > import django
+> > > django.db.connection.ensure_connection()
+> > > import django
+> > > print(django.db.connection.ensure_connection())
+> > > None
+
+app>crmapp>models.py
+
+# Create your models here.
+
+class Employee(models.Model):
+eno=models.IntegerField()
+ename=models.CharField(max_length=30)
+esal=models.FloatField()
+
+
+>py manage.py makemigrations
+>py manage.py migrate
+
+verify mysql database 
+show databases;
+use database;
+show tables;
+desc crmapp_employee
+
+cratesuperuser
+>py manage.py createsuperuser
+
+
+
+(venv) E:\Trainig Batch3\Python30\dj\hdproject>py manage.py createsuperuser
+Username (leave blank to use 'istasoft'): admin
+Email address: admin@gmail.com
+Password:
+Password (again):
+The password is too similar to the username.
+This password is too short. It must contain at least 8 characters.
+This password is too common.
+Bypass password validation and create user anyway? [y/N]: y
+Superuser created successfully.
+
+
+>py manage.py runserver
+
+
+
+================================
+How to work with static templates
+
+import os
+import pymysql 
+pymysql.install_as_MySQLdb()
+
+
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR_ONE=os.path.dirname(os.path.abspath(__file__))
+TEMPLATE_DIR=os.path.join(BASE_DIR_ONE,'templates')
