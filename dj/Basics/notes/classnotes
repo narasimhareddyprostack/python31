@@ -82,6 +82,7 @@ Superuser created successfully.
 How to work with static templates
 
 import os
+
 import pymysql 
 pymysql.install_as_MySQLdb()
 
@@ -90,3 +91,68 @@ pymysql.install_as_MySQLdb()
 BASE_DIR = Path(__file__).resolve().parent.parent
 BASE_DIR_ONE=os.path.dirname(os.path.abspath(__file__))
 TEMPLATE_DIR=os.path.join(BASE_DIR_ONE,'templates')
+=================================================================
+
+
+E:\Trainig Batch3\Python30\dj>venv\Scripts\activate
+
+(venv) E:\Trainig Batch3\Python30\dj>django-admin startproject jioproject
+
+(venv) E:\Trainig Batch3\Python30\dj>cd jioproject
+
+(venv) E:\Trainig Batch3\Python30\dj\jioproject>py manage.py startapp empapp
+
+(venv) E:\Trainig Batch3\Python30\dj\jioproject>py manage.py startapp userapp
+
+(venv) E:\Trainig Batch3\Python30\dj\jioproject>
+
+==============================================
+
+def display_Employee(request):
+    #model logic to fetch employee data
+    my_emp={}
+    return render(request, "emp.html", context=my_emp)
+
+def display_User(request):
+    my_user={}
+    return render(request, "user.html", context=my_user)
+
+
+
+
+
+from django.contrib import admin
+from django.urls import path
+
+from empapp import views
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('user/', views.display_User),
+    path('employee/', views.display_Employee),
+]
+
+
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'pro18',
+        'USER':'root',
+        'PASSWORD':'root'
+    }
+}
+
+
+================
+
+(venv) E:\Trainig Batch3\Python30\dj\jioproject>py manage.py shell
+E:\Trainig Batch3\Python30\dj\jioproject\jioproject\templates
+Python 3.12.0 (tags/v3.12.0:0fb18b0, Oct  2 2023, 13:03:39) [MSC v.1935 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+(InteractiveConsole)
+>>> import django
+>>>
+>>> print(django.db.connection.ensure_connection())
+None
+>>>

@@ -1,0 +1,89 @@
+# Django Forms
+
+Registration Form - Django
+
+Name : str | CharField()
+Email Id : str | CharField()
+Mobile Number : int | IntegerField()
+
+Registration.html
+
+==========================================
+How to read client/user data? form amd form tags
+
+login form, reg form, contact form, search form
+-Reg Form : read data from user, validate data and store into database .
+
+# Django Form:
+
+Validating data will become easy.
+Process data into python datatype - list,set,dict
+Creating model forms - model -form
+
+URL:
+127.0.0.1:8000/reg
+
+Create Registration form based model/fields
+
+# forms.py
+
+step 1 : create django project
+step 2 : create userapp
+step 3 : create views
+step 4 : create form
+step 5 :
+
+# forms.py
+
+from django.forms improt Form
+
+class UserRegForm(forms.Form):
+name = forms.CharField()
+email = forms.CharField()
+mobile =forms.IntegerField()
+
+from django.forms improt ModelForm
+class UserRegForm(forms.ModelForm):
+        model=Employee 
+        fields="__all__"
+
+
+
+step 1 : create django project
+venv\Scripts\activate
+django-admin startproject fmproject 
+
+step 2 : create userapp
+cd fmproject 
+py manage.py startapp userapp
+register - app in project --> settings.py and update
+step 3 : create views
+step 4 : create form
+    create forms.py file and create Reg form 
+step 5 :
+
+
+
+CSRF - Cross Site Resource Forgery
+
+What is need of CSRF?
+{% csrf_token %}
+
+
+Every form - should satify CSRF, Django will accept our forms 
+Create user 
+Read User 
+Update User 
+Delete 
+
+Django Form 
+------------
+
+
+How to Form - based Djanog Model ?
+
+ModelForm - forms 
+forms.ModelForm 
+
+class RegForm(forms.ModelForm):
+    fields=['']
