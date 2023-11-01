@@ -1,0 +1,27 @@
+create django project
+create django app 
+register - your app in project 
+--------------------------------
+Step 1: create Model 
+        product/prodctapp - Models.py - create Product Model 
+Step 2: create ModelForm
+Step 3: Create views
+Step 4: Routing/update urls 
+Step 5: Design UI 
+
+
+
+step 6: update database settings - prodcrud/settings.py 
+
+
+How to verify?
+py manage.py shell 
+>>import django
+>>> print(django.db.connection.ensure_connection())
+
+
+CSRF token missing?
+=======================
+What is CSRF? Cross site - Request forgery.
+Every form should satify the CSRF Token.
+
